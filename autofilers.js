@@ -17,7 +17,7 @@
 
 //prompt("coloca el link de la base de datos");
 let text;
-let linkdb = "https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/updated.asv";
+let linkdb = "https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/updated";
 if (linkdb == null || linkdb == "") {
   text = "El usuario canceló la accion";
 } else {
