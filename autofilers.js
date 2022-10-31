@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name autofillers script
 // @namespace Low
-// @version 2.0.1
+// @version 1.1
 // @updateURL https://github.com/CryingHaru/The-secretcave/raw/main/autofilers.js
 // @downloadURL https://github.com/CryingHaru/The-secretcave/raw/main/autofilers.js
 // @description autofiller
@@ -16,7 +16,7 @@
 
 //prompt("coloca el link de la base de datos");
 let text;
-let linkdb = "https://raw.githubusercontent.com/CryingHaru/haruweb/main/dbestan";
+let linkdb = "https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/updated.asv";
 if (linkdb == null || linkdb == "") {
   text = "El usuario canceló la accion";
 } else {
