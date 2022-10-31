@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name autofillers script
 // @namespace Low
-// @version 0.2
+// @version 1.0
 // @updateURL https://github.com/CryingHaru/The-secretcave/raw/main/autofilers.js
 // @downloadURL https://github.com/CryingHaru/The-secretcave/raw/main/autofilers.js
 // @description autofiller
