@@ -2,6 +2,8 @@
 // @name autofillers script
 // @namespace Low
 // @version 0.1
+// @updateURL https://github.com/CryingHaru/The-secretcave/raw/main/autofilers.js
+// @downloadURL https://github.com/CryingHaru/The-secretcave/raw/main/autofilers.js
 // @description autofiller
 // @require https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // @author ASV
