@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name autofillers script
 // @namespace Low
-// @version 1.2.1
+// @version 1.3
 // @updateURL https://github.com/CryingHaru/The-secretcave/raw/main/autofilers.js
 // @downloadURL https://github.com/CryingHaru/The-secretcave/raw/main/autofilers.js
 // @description autofiller
@@ -129,7 +129,9 @@ function validate_fecha(fechan)
         console.log("El paciente "+expnumero+" con nombre "+nombre +" "+ apellido+" tiene "+edad+" años, "+meses+" meses y "+dias+" días");
 
         if (edad == 0 || edad== undefined) {
+			document.querySelector('input[name="edad"]').value = "";
         if (meses == 0|| meses == undefined) {
+		  document.querySelector('input[name="meses"]').value = "";
           document.querySelector('input[name="dias"]').value = dias;
         } else {
           document.querySelector('input[name="meses"]').value = meses;
