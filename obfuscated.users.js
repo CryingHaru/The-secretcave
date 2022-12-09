@@ -9,7 +9,6 @@
 // @require      https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js
 // @author ASV
 // @match https://simmow.salud.gob.sv/conrec.php*
-// @match localhost
 // @grant unsafeWindow
 // @grant        GM_setValue
 // @grant        GM_getValue
