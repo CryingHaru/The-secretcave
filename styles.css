@@ -1,0 +1,94 @@
+#dialog-v::backdrop {
+    background-color: rgba(0, 0, 0, 0.568);
+
+}
+
+#dialog-v:modal {
+    padding: 0 0;
+    border: solid;
+    border-radius: 10px;
+    border-color: #1F2241;
+    max-width: 50ch;
+    height: 300ch;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    gap: 1em;
+    display: flex;
+    background-color: #EEF2FE;
+}
+
+#maindiv {
+    text-align: left;
+    font-size: 2vh;
+    max-width: 50ch;
+    padding: 0 0;
+    margin: 0 0;
+}
+
+.inputcont {
+    margin: 1px auto;
+    width: 95%;
+    position: center;
+}
+
+#btmenu {
+    background-color: #4c6baf;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#cerrar {
+    max-width: 10px;
+    max-height: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    left: 90%;
+}
+
+.btcont {
+    font-size: 14px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 19px;
+    padding-right: 19px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: inherit;
+    list-style: none;
+    border-style: none;
+    padding: 10px 15px;
+    margin-left: 1vh;
+    margin-bottom: 1px;
+    background: #1F2241;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-right: 70px;
+
+}
+
+.btcont:hover {
+    list-style: none;
+    background-color: none;
+    color: rgb(179, 177, 252);
+    cursor: pointer;
+}
+h1{
+    margin: 0 0;
+    text-align: center;
+}
+#p-v{
+margin-bottom: 10px;
+padding: 15px 0;
+background: #181D3D;
+color:white;
+border-bottom-left-radius: 18px;
+}
