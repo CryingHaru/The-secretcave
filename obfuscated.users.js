@@ -1,182 +1,20 @@
 // ==UserScript==
-// @name autofillers script
-// @namespace Low 
-// @version 1.6
+// @name     autofillers script
+// @namespace   Low
+// @version  2.0
 // @updateURL https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/obfuscated.users.js
 // @downloadURL https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/obfuscated.users.js
 // @description autofiller
-// @require https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
-// @require      https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js
+// @require     https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
+// @require     https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js
+// @resource   IMPORTED_CSS https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/styles.css
+// @grant      GM_getResourceText
+// @grant      GM_addStyle
 // @author ASV
 // @match https://simmow.salud.gob.sv/conrec.php*
 // @grant unsafeWindow
 // @grant        GM_setValue
 // @grant        GM_getValue
 // ==/UserScript==
-//Variables
-const I = b;
-(function (c, d) {
-    const H = b,
-    e = c();
-    while (!![]) {
-        try {
-            const f = -parseInt(H(0x10d)) / 0x1 * (parseInt(H(0xeb)) / 0x2) + -parseInt(H(0x10f)) / 0x3 + -parseInt(H(0xea)) / 0x4 * (-parseInt(H(0x115)) / 0x5) + -parseInt(H(0xf1)) / 0x6 + -parseInt(H(0x10a)) / 0x7 + -parseInt(H(0x12e)) / 0x8 * (parseInt(H(0x10b)) / 0x9) + parseInt(H(0xf2)) / 0xa * (parseInt(H(0x11e)) / 0xb);
-            if (f === d)
-                break;
-            else
-                e['push'](e['shift']());
-        } catch (g) {
-            e['push'](e['shift']());
-        }
-    }
-}
-    (a, 0x9546e));
-let expediente = document[I(0x101)]('[name=\x22expe\x22]');
-function b(c, d) {
-    const e = a();
-    return b = function (f, g) {
-        f = f - 0xe6;
-        let h = e[f];
-        return h;
-    },
-    b(c, d);
-}
-const departamento = document[I(0x101)](I(0x136)), municipio = document[I(0x101)](I(0x11d));
-let edadaños = document[I(0x101)]('input[name=\x22edad\x22]'), edadmeses = document[I(0x101)]('input[name=\x22meses\x22]'), edaddias = document['querySelector'](I(0x119)), hombre = document[I(0x101)](I(0x116)), mujer = document[I(0x101)](I(0xf5)), sindefinido = document[I(0x101)](I(0xe9)), hoyn = document['querySelector']('input[name=\x22fecha\x22]')[I(0x102)], numerodeexpediente, consoleoutput, selectedlink = GM_getValue(I(0x109)), name = GM_getValue(I(0x123)), linkdatos = GM_getValue('url'), links = I(0x12a), ld;
-fetch(links)[I(0x137)](c => {
-    return c['json']();
-})['then'](c => {
-    const J = I;
-    ld = c;
-    if (selectedlink == null || selectedlink == '') {
-        consoleoutput = J(0x110);
-        let e = prompt('selecciona\x20la\x20base\x20de\x20datos(1,2)', '');
-        e == null || e == '' ? console[J(0x125)](null) : (GM_setValue(J(0x109), e), GM_setValue(J(0x132), ld[e][J(0x132)]), GM_setValue(J(0x123), ld[e][J(0x123)]), console[J(0x125)](J(0x11a) + e + '\x20con\x20nombre:\x20' + ld[e][J(0x123)]), setTimeout(function () {
-                const K = J;
-                document[K(0x114)][K(0xff)]();
-            }, 0x3e8));
-    }
-    console[J(0x125)](J(0x108) + selectedlink + J(0xfc) + name);
-    if (linkdatos == null || linkdatos == '')
-        consoleoutput = J(0x139);
-    else {
-        consoleoutput = J(0x100);
-        let f,
-        g;
-        fetch(linkdatos)['then'](h => {
-            const L = J;
-            return h[L(0xe7)]();
-        })[J(0x137)](h => {
-            const M = J;
-            f = h,
-            expediente[M(0x11f)]('keyup', function (i) {
-                const N = M;
-                console[N(0xe8)](),
-                numerodeexpediente = expediente[N(0x102)];
-                const j = f[numerodeexpediente]['S'],
-                k = f[numerodeexpediente]['F'],
-                l = f[numerodeexpediente]['N'];
-                let m = l['split'](','),
-                n = m[0x0],
-                o = m[0x1];
-                hoyn = document[N(0x101)]('input[name=\x22fecha\x22]')[N(0x102)],
-                departamento['value'] = 0xb,
-                departamento[N(0x112)](new Event(N(0x106))),
-                setTimeout(p, 0x3e8);
-                function p() {
-                    const O = N;
-                    municipio[O(0x102)] = 0xb6,
-                    municipio[O(0x112)](new Event('change'));
-                }
-                var q = k[N(0xf0)]('/'),
-                r = parseInt(q[0x0]),
-                s = parseInt(q[0x1]),
-                t = parseInt(q[0x2]),
-                u = hoyn[N(0xf0)]('/'),
-                v = parseInt(u[0x0]),
-                w = parseInt(u[0x1]),
-                x = parseInt(u[0x2]);
-                function y() {
-                    const P = N;
-                    let A = new Date(x, w, v),
-                    B = new Date(t, s, r);
-                    const C = A['getTime']() - B[P(0xf7)](),
-                    D = Math[P(0x13b)](C / 0x757b12c00),
-                    E = Math[P(0x13b)](C % 0x757b12c00 / 0x9ca41900),
-                    F = Math['floor'](C % 0x757b12c00 % 0x9ca41900 / 0x5265c00);
-                    var G = {
-                        'edad': D,
-                        'meses': E,
-                        'dias': F
-                    };
-                    return G;
-                }
-                let z = y();
-                z[N(0x130)] == 0x0 || z[N(0x130)] == undefined ? (edadaños['value'] = '', z[N(0xf8)] == 0x0 || z['meses'] == undefined ? (edadmeses[N(0x102)] = '', edaddias[N(0x102)] = z['dias']) : edadmeses[N(0x102)] = z['meses']) : edadaños[N(0x102)] = z['edad'],
-                console[N(0x125)]('Nombre:' + l + N(0x105) + k + N(0xec) + j),
-                console[N(0x125)](N(0x124) + z[N(0x130)] + N(0xfa) + z[N(0xf8)] + '\x20Meses\x20' + z[N(0x10c)] + N(0xf3)),
-                console[N(0x125)](N(0x12d) + hoyn),
-                j == N(0xef) ? hombre[N(0x111)] = !![] : j == N(0xed) ? mujer[N(0x111)] = !![] : sindefinido[N(0x111)] = !![];
-            });
-        });
-        var d = document[J(0x122)](J(0x138));
-        d[J(0x134)] = J(0x103),
-        d[J(0x129)] = function () {
-            const Q = J;
-            var h = document[Q(0x122)](Q(0x121));
-            h[Q(0x107)] = Q(0x127),
-            h[Q(0x133)] = Q(0x12f),
-            h[Q(0x135)] = function () {
-                const R = Q;
-                var i = h['files'][0x0],
-                j = new FileReader();
-                j[R(0xfe)] = function () {
-                    const S = R;
-                    var k = XLSX[S(0x117)](j['result'], {
-                        'type': S(0x118)
-                    });
-                    k['SheetNames'][S(0xf6)](function (l) {
-                        const T = S;
-                        var m = k[T(0xfb)][l],
-                        n = XLSX[T(0xee)][T(0x104)](m),
-                        o = {};
-                        n[T(0xf6)](function (p) {
-                            const U = T;
-                            var q = p[Object[U(0x120)](p)[0x0]];
-                            q === undefined && (q = U(0x12c)),
-                            !o[U(0x12b)](q) && (o[q] = {}),
-                            Object[U(0x120)](p)[U(0xf6)](function (r) {
-                                o[q][r] = p[r];
-                            });
-                        }),
-                        console[T(0x125)](JSON[T(0xf9)](o, null, 0x4)),
-                        setTimeout(function () {
-                            const V = T;
-                            var p = V(0x10e) + encodeURIComponent(JSON['stringify'](o, null, 0x4)),
-                            q = document[V(0x122)]('a');
-                            q[V(0x113)] = V(0x128),
-                            q[V(0x13a)] = p,
-                            q[V(0x11b)](),
-                            document['body'][V(0x131)](q);
-                        }, 0xbb8);
-                    });
-                },
-                j[R(0xfd)](i);
-            },
-            h[Q(0x11b)]();
-        },
-        document[J(0x126)][J(0x131)](d);
-    }
-});
-function a() {
-    const X = ['accept', 'innerHTML', 'onchange', 'select[name=\x22p_dept\x22]', 'then', 'button', 'No\x20hay\x20ninguna\x20base\x20de\x20datos', 'href', 'floor', 'Reiniciar\x20todo', 'json', 'clear', 'input[name=\x22sex\x22][value=\x223\x22]', '8okxvJg', '5766YVZTni', ',\x20sexo:', 'Femenino', 'utils', 'Masculino', 'split', '1214304tigheB', '30310JYHTSL', '\x20Dias', 'El\x20usuario\x20cancelo\x20el\x20reinicio', 'input[name=\x22sex\x22][value=\x222\x22]', 'forEach', 'getTime', 'meses', 'stringify', '\x20Años\x20', 'Sheets', '\x20Con\x20nombre:\x20', 'readAsBinaryString', 'onload', 'reload', 'Base\x20de\x20datos\x20cargada', 'querySelector', 'value', 'Seleccionar\x20base\x20de\x20datos\x20actualizada', 'sheet_to_json', ',\x20Fecha\x20de\x20nacimiento:', 'change', 'type', 'Usando\x20base\x20de\x20datos:', 'selected', '3630081ZMlqrX', '9010467PXUjhL', 'dias', '398PEBoDd', 'data:application/json;charset=utf-8,', '271527qjpBGo', 'seleccionar\x20base\x20de\x20datos', 'checked', 'dispatchEvent', 'download', 'location', '1237615CVaLYp', 'input[name=\x22sex\x22][value=\x221\x22]', 'read', 'binary', 'input[name=\x22dias\x22]', 'seleccionada\x20la\x20base:\x20', 'click', '¿Seguro\x20quieres\x20eliminar\x20la\x20base\x20de\x20datos\x20y\x20el\x20token?', 'select[name=\x22p_muni\x22]', '11165IpUOtU', 'addEventListener', 'keys', 'input', 'createElement', 'name', 'Tiene:', 'log', 'body', 'file', 'updated.svl', 'onclick', 'https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/listds.svl', 'hasOwnProperty', 'undefined', 'La\x20fecha\x20de\x20calculo\x20de\x20edad\x20es:', '8Sjhfhm', '.xls,.xlsx', 'edad', 'appendChild', 'url'];
-    a = function () {
-        return X;
-    };
-    return a();
-}
-var reset = document[I(0x122)](I(0x138));
-reset['innerHTML'] = I(0xe6), reset['onclick'] = function () {
-    const W = I;
-    confirm(W(0x11c)) ? (GM_setValue(W(0x132), ''), GM_setValue(W(0x109), ''), document[W(0x114)][W(0xff)]()) : console[W(0x125)](W(0xf4));
-}, document['body'][I(0x131)](reset);
+
+var _0x302833=_0x5ba6;(function(_0x449ae4,_0x416749){var _0x5b94d2=_0x5ba6,_0x35923c=_0x449ae4();while(!![]){try{var _0x3292de=-parseInt(_0x5b94d2(0x112))/0x1*(parseInt(_0x5b94d2(0xed))/0x2)+parseInt(_0x5b94d2(0xf3))/0x3*(-parseInt(_0x5b94d2(0xec))/0x4)+parseInt(_0x5b94d2(0x10d))/0x5+-parseInt(_0x5b94d2(0x108))/0x6*(-parseInt(_0x5b94d2(0xf1))/0x7)+-parseInt(_0x5b94d2(0x148))/0x8*(parseInt(_0x5b94d2(0x125))/0x9)+parseInt(_0x5b94d2(0x12c))/0xa*(parseInt(_0x5b94d2(0x128))/0xb)+parseInt(_0x5b94d2(0x10b))/0xc;if(_0x3292de===_0x416749)break;else _0x35923c['push'](_0x35923c['shift']());}catch(_0x49fbe7){_0x35923c['push'](_0x35923c['shift']());}}}(_0x325a,0x45659));const my_css=GM_getResourceText(_0x302833(0x14e));function _0x5ba6(_0x314d8a,_0x50d2ca){var _0x325a7=_0x325a();return _0x5ba6=function(_0x5ba6ab,_0x3ce008){_0x5ba6ab=_0x5ba6ab-0xe5;var _0x5735d3=_0x325a7[_0x5ba6ab];return _0x5735d3;},_0x5ba6(_0x314d8a,_0x50d2ca);}GM_addStyle(my_css);let expediente=document[_0x302833(0x13c)](_0x302833(0x12f));const departamento=document['querySelector']('select[name=\x22p_dept\x22]'),municipio=document['querySelector']('select[name=\x22p_muni\x22]');let edadaños=document['querySelector'](_0x302833(0xeb)),edadmeses=document[_0x302833(0x13c)](_0x302833(0x12d)),edaddias=document[_0x302833(0x13c)](_0x302833(0x116)),hombre=document[_0x302833(0x13c)](_0x302833(0x126)),mujer=document[_0x302833(0x13c)](_0x302833(0xf0)),sindefinido=document[_0x302833(0x13c)](_0x302833(0xe6)),hoyn=document[_0x302833(0x13c)](_0x302833(0x11e))[_0x302833(0xf9)],numerodeexpediente,consoleoutput,selectedlink=GM_getValue(_0x302833(0x10f)),name=GM_getValue(_0x302833(0x135)),linkdatos=GM_getValue(_0x302833(0x100)),links=_0x302833(0x11b),ld,tst=GM_getValue(_0x302833(0x118));fetch(links)[_0x302833(0x13a)](_0x53529a=>{var _0x5ff258=_0x302833;return _0x53529a[_0x5ff258(0xf5)]();})[_0x302833(0x13a)](_0x5554b0=>{var _0x3f88ed=_0x302833;ld=_0x5554b0,GM_setValue(_0x3f88ed(0x118),_0x5554b0),console[_0x3f88ed(0xfb)](_0x3f88ed(0xfc)+selectedlink+_0x3f88ed(0xfa)+tst[selectedlink][_0x3f88ed(0x135)]);if(linkdatos==null||linkdatos=='')consoleoutput='No\x20hay\x20ninguna\x20base\x20de\x20datos';else{consoleoutput=_0x3f88ed(0xe8);let _0xf942ec,_0x4b96f5;fetch(linkdatos)[_0x3f88ed(0x13a)](_0xafc71d=>{var _0x37f226=_0x3f88ed;return _0xafc71d[_0x37f226(0xf5)]();})[_0x3f88ed(0x13a)](_0x4afa9a=>{var _0x2e2ea0=_0x3f88ed;_0xf942ec=_0x4afa9a,expediente[_0x2e2ea0(0x136)](_0x2e2ea0(0x10a),function(_0x13d7be){var _0x15520d=_0x2e2ea0;console['clear']();let _0x215616=GM_getValue(_0x15520d(0x151)),_0x323c23=GM_getValue(_0x15520d(0x111));numerodeexpediente=expediente[_0x15520d(0xf9)];const _0x59906f=_0xf942ec[numerodeexpediente]['S'],_0x42b15e=_0xf942ec[numerodeexpediente]['F'],_0x253b98=_0xf942ec[numerodeexpediente]['N'];let _0x3691c7=_0x253b98[_0x15520d(0x11c)](','),_0x44ec26=_0x3691c7[0x0],_0x3c8fee=_0x3691c7[0x1];hoyn=document[_0x15520d(0x13c)](_0x15520d(0x11e))[_0x15520d(0xf9)],departamento[_0x15520d(0xf9)]=_0x215616,departamento[_0x15520d(0x14d)](new Event('change')),setTimeout(_0xff8a26,0x64);function _0xff8a26(){var _0x45f61a=_0x15520d;municipio[_0x45f61a(0xf9)]=_0x323c23,municipio[_0x45f61a(0x14d)](new Event(_0x45f61a(0xf6)));}var _0x1220b6=_0x42b15e[_0x15520d(0x11c)]('/'),_0x58087c=parseInt(_0x1220b6[0x0]),_0x3a33b2=parseInt(_0x1220b6[0x1]),_0x358f96=parseInt(_0x1220b6[0x2]),_0x3a8e60=hoyn[_0x15520d(0x11c)]('/'),_0x151cde=parseInt(_0x3a8e60[0x0]),_0x444ef0=parseInt(_0x3a8e60[0x1]),_0x3a1d37=parseInt(_0x3a8e60[0x2]);function _0x488e5f(){var _0x11221d=_0x15520d;let _0x344968=new Date(_0x3a1d37,_0x444ef0,_0x151cde),_0x449138=new Date(_0x358f96,_0x3a33b2,_0x58087c);const _0x147f0f=_0x344968[_0x11221d(0xf8)]()-_0x449138[_0x11221d(0xf8)](),_0x1a15db=Math[_0x11221d(0x14b)](_0x147f0f/0x757b12c00),_0x516a82=Math['floor'](_0x147f0f%0x757b12c00/0x9ca41900),_0x46479e=Math['floor'](_0x147f0f%0x757b12c00%0x9ca41900/0x5265c00);var _0x4ca614={'edad':_0x1a15db,'meses':_0x516a82,'dias':_0x46479e};return _0x4ca614;}let _0x1b2d88=_0x488e5f();_0x1b2d88['edad']==0x0||_0x1b2d88[_0x15520d(0x14c)]==undefined?(edadaños[_0x15520d(0xf9)]='0',_0x1b2d88[_0x15520d(0x122)]==0x0||_0x1b2d88[_0x15520d(0x122)]==undefined?(edadmeses[_0x15520d(0xf9)]='',edaddias['value']=_0x1b2d88[_0x15520d(0x124)]):edadmeses['value']=_0x1b2d88[_0x15520d(0x122)]):edadaños[_0x15520d(0xf9)]=_0x1b2d88[_0x15520d(0x14c)],console[_0x15520d(0xfb)](_0x15520d(0xee)+_0x253b98+',\x20Fecha\x20de\x20nacimiento:'+_0x42b15e+_0x15520d(0x137)+_0x59906f),console[_0x15520d(0xfb)](_0x15520d(0x104)+_0x1b2d88[_0x15520d(0x14c)]+_0x15520d(0x129)+_0x1b2d88[_0x15520d(0x122)]+_0x15520d(0x115)+_0x1b2d88[_0x15520d(0x124)]+'\x20Dias'),console[_0x15520d(0xfb)](_0x15520d(0x117)+hoyn),_0x59906f==_0x15520d(0xf2)?hombre['checked']=!![]:_0x59906f==_0x15520d(0x114)?mujer['checked']=!![]:sindefinido[_0x15520d(0x144)]=!![];});});}});var basededatosbt=document[_0x302833(0xf4)](_0x302833(0x130));basededatosbt[_0x302833(0x102)]=_0x302833(0x149),basededatosbt['innerHTML']=_0x302833(0x138),basededatosbt[_0x302833(0x147)]=function(){var _0x22e0af=_0x302833,_0x5976f7=document['createElement'](_0x22e0af(0x105));_0x5976f7['type']='file',_0x5976f7[_0x22e0af(0x101)]='.xls,.xlsx',_0x5976f7[_0x22e0af(0x12a)]=function(){var _0x22a553=_0x22e0af,_0x3af381=_0x5976f7[_0x22a553(0x13e)][0x0],_0x19b425=new FileReader();_0x19b425[_0x22a553(0x139)]=function(){var _0x449953=_0x22a553,_0x47ec68=XLSX[_0x449953(0x141)](_0x19b425[_0x449953(0xf7)],{'type':_0x449953(0x132)});_0x47ec68[_0x449953(0x11d)][_0x449953(0x12b)](function(_0x6ba90d){var _0x3d47ab=_0x449953,_0x45b94f=_0x47ec68[_0x3d47ab(0x103)][_0x6ba90d],_0xdc2ecd=XLSX['utils'][_0x3d47ab(0x106)](_0x45b94f),_0x1ea7d7={};_0xdc2ecd[_0x3d47ab(0x12b)](function(_0x1fa535){var _0x4684c9=_0x3d47ab,_0x4a66f8=_0x1fa535[Object[_0x4684c9(0x150)](_0x1fa535)[0x0]];_0x4a66f8===undefined&&(_0x4a66f8='undefined'),!_0x1ea7d7['hasOwnProperty'](_0x4a66f8)&&(_0x1ea7d7[_0x4a66f8]={}),Object[_0x4684c9(0x150)](_0x1fa535)[_0x4684c9(0x12b)](function(_0x1b4566){_0x1ea7d7[_0x4a66f8][_0x1b4566]=_0x1fa535[_0x1b4566];});}),console[_0x3d47ab(0xfb)](JSON[_0x3d47ab(0x133)](_0x1ea7d7,null,0x4)),setTimeout(function(){var _0x56133b=_0x3d47ab,_0x384c9f=_0x56133b(0x121)+encodeURIComponent(JSON[_0x56133b(0x133)](_0x1ea7d7,null,0x4)),_0x35d42c=document[_0x56133b(0xf4)]('a');_0x35d42c['className']=_0x56133b(0x149),_0x35d42c[_0x56133b(0x13b)]=_0x56133b(0xef),_0x35d42c['href']=_0x384c9f,_0x35d42c[_0x56133b(0xea)](),dialogTag[_0x56133b(0x146)](_0x35d42c);},0xbb8);});},_0x19b425[_0x22a553(0x14f)](_0x3af381);},_0x5976f7[_0x22e0af(0xea)]();};var reset=document['createElement']('button');function _0x325a(){var _0x493602=['meses','select[id=\x22tsmunicipio\x22]','dias','4710735bOTPmO','input[name=\x22sex\x22][value=\x221\x22]','inputcont','10417OSdqhF','\x20Años\x20','onchange','forEach','1770xFHHxZ','input[name=\x22meses\x22]','El\x20usuario\x20cancelo\x20el\x20reinicio','[name=\x22expe\x22]','button','select[id=\x22tsdepartamento\x22]','binary','stringify','length','name','addEventListener',',\x20sexo:','Seleccionar\x20base\x20de\x20datos\x20actualizada','onload','then','download','querySelector','innerHTML','files','Reiniciar\x20todo','maindiv','read','tsdepartamento','btmenu','checked','Guardar\x20Departamento\x20y\x20Municipio','appendChild','onclick','8vLGeuG','btcont','dialog','floor','edad','dispatchEvent','IMPORTED_CSS','readAsBinaryString','keys','dep','showModal','tsmunicipio','input[name=\x22sex\x22][value=\x223\x22]','<label\x20for=\x22urlc\x22>Coloca\x20el\x20link\x20de\x20tu\x20base\x20de\x20datos\x20personal:</label><input\x20type=\x22text\x22\x20class=\x22inputcont\x22\x20id=\x22urlc\x22></input>','Base\x20de\x20datos\x20cargada','<div\x20id=\x22p-v\x22><h1>Autofillers\x20Menú</h1></div>','click','input[name=\x22edad\x22]','2016184GUAxYR','202tvlhBQ','Nombre:','updated.svl','input[name=\x22sex\x22][value=\x222\x22]','3563jaBJlC','Masculino','3pdFGUL','createElement','json','change','result','getTime','value','\x20Con\x20nombre:\x20','log','Usando\x20base\x20de\x20datos:','reload','undefined','<option\x20value=\x221\x22>Ahuachapan</option><option\x20value=\x229\x22>Cabañas</option><option\x20value=\x224\x22>Chalatenango</option><option\x20value=\x2218\x22>Costa\x20Rica</option><option\x20value=\x227\x22>Cuscatlan</option><option\x20value=\x2215\x22>Guatemala</option><option\x20value=\x2216\x22>Honduras</option><option\x20value=\x225\x22>La\x20Libertad</option><option\x20value=\x228\x22>La\x20Paz</option><option\x20value=\x2214\x22>La\x20Union</option><option\x20value=\x2213\x22>Morazan</option><option\x20value=\x2217\x22>Nicaragua</option><option\x20value=\x2220\x22>Otros\x20Paises</option><option\x20value=\x2219\x22>Panamá</option><option\x20value=\x2221\x22>Salvadoreño\x20Residente\x20Exterior</option><option\x20value=\x2212\x22>San\x20Miguel</option><option\x20value=\x226\x22>San\x20Salvador</option><option\x20value=\x2210\x22>San\x20Vicente</option><option\x20value=\x222\x22>Santa\x20Ana</option><option\x20value=\x223\x22>Sonsonate</option><option\x20value=\x2211\x22>Usulutan</option>','url','accept','className','Sheets','Tiene:','input','sheet_to_json','Guardar\x20url','1572oXZIzE','Guardar','keyup','12055164NzTsVX','Seleccionar\x20Departamento\x20y\x20Municipio:','2684455FDyscx','location','selected','<img\x20id=\x22cerrar\x22src=\x22https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/icons/close.svg\x22\x20alt=\x22X\x22></img>','mun','5255XeJDIu','select','Femenino','\x20Meses\x20','input[name=\x22dias\x22]','La\x20fecha\x20de\x20calculo\x20de\x20edad\x20es:','ndb','label','div','https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/listds.svl','split','SheetNames','input[name=\x22fecha\x22]','body','add','data:application/json;charset=utf-8,'];_0x325a=function(){return _0x493602;};return _0x325a();}reset[_0x302833(0x13d)]=_0x302833(0x13f),reset[_0x302833(0x102)]=_0x302833(0x149),reset[_0x302833(0x147)]=function(){var _0x3c2c77=_0x302833;confirm('¿Seguro\x20quieres\x20reiniciar\x20todo\x20y\x20borrar\x20datos\x20guardados?')?(GM_setValue('url',''),GM_setValue('selected',''),GM_setValue(_0x3c2c77(0x135),''),GM_setValue(_0x3c2c77(0x118),''),GM_setValue(_0x3c2c77(0x151),''),GM_setValue(_0x3c2c77(0x111),''),document['location'][_0x3c2c77(0xfd)]()):console[_0x3c2c77(0xfb)](_0x3c2c77(0x12e));};var guardarurl=document[_0x302833(0xf4)](_0x302833(0x130));guardarurl[_0x302833(0x13d)]=_0x302833(0x107),guardarurl['className']=_0x302833(0x149),guardarurl['onclick']=function(){var _0x1ddd3c=_0x302833;let _0x427715=document[_0x1ddd3c(0x13c)]('input[id=\x22urlc\x22][type=\x22text\x22]');GM_setValue('selected','\x20'),GM_setValue(_0x1ddd3c(0x100),_0x427715['value']),document[_0x1ddd3c(0x10e)][_0x1ddd3c(0xfd)]();};var urlin=document[_0x302833(0xf4)](_0x302833(0x11a));urlin[_0x302833(0x13d)]=_0x302833(0xe7),urlin['className']=_0x302833(0x127);var close=document[_0x302833(0xf4)]('a');close[_0x302833(0x13d)]=_0x302833(0x110),close['onclick']=function(){dialogTag['close']();};let tstcompleto;var ppartestst,ndbss;function selects(){var _0x205d43=_0x302833;let _0x13f5eb=Object[_0x205d43(0x150)](tst)[_0x205d43(0x134)];for(var _0x13a74a=0x1;_0x13a74a<=_0x13f5eb;_0x13a74a++){let _0x4c1356=tst[_0x13a74a];_0x4c1356==null||_0x4c1356==_0x205d43(0xfe)?(tstcompleto='\x20',selectdbs[_0x205d43(0x120)](new Option(tstcompleto))):(tstcompleto=_0x13a74a-0x1+'-'+_0x4c1356[_0x205d43(0x135)],selectdbs['add'](new Option(tstcompleto)));}}let labesdbs=document[_0x302833(0xf4)](_0x302833(0x119));labesdbs[_0x302833(0x13d)]='Selecciona\x20una\x20de\x20la\x20lista:';let labesdm=document[_0x302833(0xf4)]('label');labesdm[_0x302833(0x13d)]=_0x302833(0x10c);let selectdbs=document['createElement'](_0x302833(0x113));selectdbs[_0x302833(0x139)]=selects(),selectdbs['id']='sdbs',selectdbs[_0x302833(0x102)]=_0x302833(0x127),selectdbs['onchange']=function(){var _0x50e4d0=_0x302833;partestst=selectdbs[_0x50e4d0(0xf9)][_0x50e4d0(0x11c)]('-'),ndbss=parseInt(partestst[0x0])+0x1;};var guardardb=document[_0x302833(0xf4)](_0x302833(0x130));guardardb['innerHTML']=_0x302833(0x109),guardardb[_0x302833(0x102)]=_0x302833(0x149),guardardb['onclick']=function(){var _0x3dde20=_0x302833;GM_setValue(_0x3dde20(0x10f),ndbss),GM_setValue(_0x3dde20(0x100),tst[ndbss][_0x3dde20(0x100)]),document['location']['reload']();};var divserlect=document[_0x302833(0xf4)](_0x302833(0x11a));divserlect['className']=_0x302833(0x127),divserlect[_0x302833(0x146)](labesdbs),divserlect[_0x302833(0x146)](selectdbs);var tstmunicipio=document[_0x302833(0xf4)](_0x302833(0x113));tstmunicipio['id']=_0x302833(0xe5),tstmunicipio[_0x302833(0x102)]=_0x302833(0x127);let seldep=document['createElement'](_0x302833(0x113));seldep['id']=_0x302833(0x142),seldep['className']=_0x302833(0x127),seldep[_0x302833(0x13d)]=_0x302833(0xff),seldep[_0x302833(0x12a)]=function(){var _0x29d81c=_0x302833;let _0x597db6=document[_0x29d81c(0x13c)](_0x29d81c(0x131))['value'];var _0x42f898=cats[_0x29d81c(0x134)],_0x178774=0x0;for(var _0x1112f4=0x0;_0x1112f4<_0x42f898;_0x1112f4++){_0x597db6==cats1[_0x1112f4]&&(tstmunicipio[_0x178774++]=new Option(cats2[_0x1112f4],cats[_0x1112f4]));}};var guardardepymun=document['createElement'](_0x302833(0x130));guardardepymun[_0x302833(0x13d)]=_0x302833(0x145),guardardepymun[_0x302833(0x102)]=_0x302833(0x149),guardardepymun[_0x302833(0x147)]=function(){var _0x3ae8d7=_0x302833;let _0x3d7a00=document[_0x3ae8d7(0x13c)](_0x3ae8d7(0x131)),_0x1be912=document[_0x3ae8d7(0x13c)](_0x3ae8d7(0x123));GM_setValue(_0x3ae8d7(0x151),_0x3d7a00[_0x3ae8d7(0xf9)]),GM_setValue(_0x3ae8d7(0x111),_0x1be912[_0x3ae8d7(0xf9)]);};var tstdepartamento=document['createElement']('div');tstdepartamento[_0x302833(0x102)]=_0x302833(0x127),tstdepartamento[_0x302833(0x146)](labesdm),tstdepartamento[_0x302833(0x146)](seldep),tstdepartamento['appendChild'](tstmunicipio);var info=document[_0x302833(0xf4)]('div');info['id']=_0x302833(0x140),info[_0x302833(0x13d)]=_0x302833(0xe9),info[_0x302833(0x146)](close),info[_0x302833(0x146)](urlin),info[_0x302833(0x146)](guardarurl),info[_0x302833(0x146)](basededatosbt),info['appendChild'](divserlect),info[_0x302833(0x146)](guardardb),info[_0x302833(0x146)](tstdepartamento),info['appendChild'](guardardepymun),info['appendChild'](reset);var dialogTag=document[_0x302833(0xf4)](_0x302833(0x14a));dialogTag['id']='dialog-v',dialogTag[_0x302833(0x146)](info),document[_0x302833(0x11f)]['appendChild'](dialogTag);var openDialogButton=document[_0x302833(0xf4)]('a');openDialogButton['id']=_0x302833(0x143),openDialogButton['innerHTML']='<span>Abrir\x20menú</span>',openDialogButton[_0x302833(0x147)]=function(){var _0x43d9a8=_0x302833;dialogTag[_0x43d9a8(0x152)]();};let pmc=document[_0x302833(0x13c)]('center');pmc['appendChild'](openDialogButton);
