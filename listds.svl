@@ -8,13 +8,7 @@
         "name": "ES.UCSFI"
     },
     "3": {
-        "url": "https://holamundo.this",
-        "name": "THIS IS A TEST"
-         },
-     "4": {  
-        "url": "otrs",
-        "name": "otro test"
-    }
-    
-         
+        "url": "localhost",
+        "name": "DB prueba"
+         }       
 }
