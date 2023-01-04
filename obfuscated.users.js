@@ -15,6 +15,7 @@
 // @grant unsafeWindow
 // @grant        GM_setValue
 // @grant        GM_getValue
+// ==/UserScript==
 const my_css = GM_getResourceText("IMPORTED_CSS");
 GM_addStyle(my_css);
 let expediente = document.querySelector('[name="expe"]');
