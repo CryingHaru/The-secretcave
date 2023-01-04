@@ -4,7 +4,6 @@
 // @version  2.5
 // @updateURL https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/obfuscated.users.js
 // @downloadURL https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/obfuscated.users.js
-
 // @description autofiller
 // @require https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/loaded.users.js
 // @require     https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
