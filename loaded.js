@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     autofillers script
 // @namespace   Low
-// @version  1.7
+// @version  1.0
 // @updateURL https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/obfuscated.users.js
 // @downloadURL https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/obfuscated.users.js
 // @description autofiller
