@@ -3,18 +3,26 @@
 
 }
 
-#dialog-v:modal {
+.scdiag {
+    display: none;
+}
+
+.openscdiag {
     padding: 0 0;
     border: solid;
     border-radius: 10px;
     border-color: #1F2241;
-    max-width: 50ch;
-    height: 300ch;
+    max-width: 38ch;
+    position: fixed;
+    height: 60ch;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     gap: 1em;
+    margin-left: 35%;
+    margin-right: 20%;
+    margin-top: 2%;
     display: flex;
     background-color: #EEF2FE;
 }
@@ -71,7 +79,7 @@
     background: #1F2241;
     color: rgb(255, 255, 255);
     cursor: pointer;
-    margin-right: 70px;
+    margin-right: 0;
 
 }
 
