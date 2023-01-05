@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name     autofillers script
 // @namespace   Low
-// @version  2.5
+// @version  2.6
 // @updateURL https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/obfuscated.users.js
 // @downloadURL https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/obfuscated.users.js
 // @description autofiller
 // @require     https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // @require     https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js
+// @require https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js
 // @resource   IMPORTED_CSS https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/styles.css
 // @grant      GM_getResourceText
 // @grant      GM_addStyle
@@ -17,4 +18,362 @@
 // @grant        GM_setValue
 // @grant        GM_getValue
 // ==/UserScript==
-var I=b;(function(c,d){var H=b,e=c();while(!![]){try{var f=parseInt(H(0x144))/0x1*(parseInt(H(0x16b))/0x2)+parseInt(H(0x138))/0x3*(parseInt(H(0x16f))/0x4)+-parseInt(H(0x173))/0x5+parseInt(H(0x128))/0x6+-parseInt(H(0x11b))/0x7*(-parseInt(H(0x145))/0x8)+-parseInt(H(0x12c))/0x9+-parseInt(H(0x17a))/0xa;if(f===d)break;else e['push'](e['shift']());}catch(g){e['push'](e['shift']());}}}(a,0xae894));const my_css=GM_getResourceText(I(0x147));GM_addStyle(my_css);let expediente=document[I(0x119)](I(0x174));const departamento=document[I(0x119)](I(0x15c)),municipio=document['querySelector'](I(0x134));let edadaños=document[I(0x119)](I(0x121)),edadmeses=document[I(0x119)]('input[name=\x22meses\x22]'),edaddias=document['querySelector'](I(0x131)),hombre=document[I(0x119)](I(0x17b)),mujer=document[I(0x119)]('input[name=\x22sex\x22][value=\x222\x22]'),sindefinido=document[I(0x119)](I(0x115)),hoyn=document['querySelector'](I(0x149))[I(0x11d)],numerodeexpediente,consoleoutput,selectedlink=GM_getValue(I(0x117)),name=GM_getValue(I(0x120)),linkdatos=GM_getValue(I(0x165)),links=I(0x16e),ld,tst=GM_getValue(I(0x15a));fetch(links)[I(0x176)](c=>{var J=I;return c[J(0x168)]();})[I(0x176)](c=>{var K=I;ld=c,GM_setValue('ndb',c),console[K(0x11c)]('Usando\x20base\x20de\x20datos:'+selectedlink+K(0x125)+tst[selectedlink][K(0x120)]);if(linkdatos==null||linkdatos=='')consoleoutput=K(0x140);else{consoleoutput=K(0x14c);let d,e;fetch(linkdatos)[K(0x176)](f=>{return f['json']();})['then'](f=>{var L=K;d=f,expediente[L(0x12f)]('keyup',function(g){var M=L;console['clear']();let h=GM_getValue(M(0x13e)),i=GM_getValue(M(0x116));numerodeexpediente=expediente[M(0x11d)];const j=d[numerodeexpediente]['S'],k=d[numerodeexpediente]['F'],l=d[numerodeexpediente]['N'];let m=l[M(0x14b)](','),n=m[0x0],o=m[0x1];hoyn=document[M(0x119)](M(0x149))['value'],departamento[M(0x11d)]=h,departamento['dispatchEvent'](new Event('change')),setTimeout(p,0x64);function p(){var N=M;municipio[N(0x11d)]=i,municipio[N(0x15b)](new Event('change'));}var q=k['split']('/'),r=parseInt(q[0x0]),s=parseInt(q[0x1]),t=parseInt(q[0x2]),u=hoyn[M(0x14b)]('/'),v=parseInt(u[0x0]),w=parseInt(u[0x1]),x=parseInt(u[0x2]);function y(){var O=M;let A=new Date(x,w,v),B=new Date(t,s,r);const C=A[O(0x11e)]()-B[O(0x11e)](),D=Math[O(0x157)](C/0x757b12c00),E=Math[O(0x157)](C%0x757b12c00/0x9ca41900),F=Math[O(0x157)](C%0x757b12c00%0x9ca41900/0x5265c00);var G={'edad':D,'meses':E,'dias':F};return G;}let z=y();z[M(0x154)]==0x0||z[M(0x154)]==undefined?(edadaños['value']='0',z['meses']==0x0||z[M(0x156)]==undefined?(edadmeses[M(0x11d)]='',edaddias[M(0x11d)]=z[M(0x15f)]):edadmeses['value']=z[M(0x156)]):edadaños[M(0x11d)]=z[M(0x154)],console[M(0x11c)]('Nombre:'+l+M(0x15e)+k+',\x20sexo:'+j),console['log'](M(0x146)+z[M(0x154)]+M(0x162)+z[M(0x156)]+M(0x135)+z[M(0x15f)]+M(0x13c)),console[M(0x11c)](M(0x132)+hoyn),j==M(0x13f)?hombre[M(0x153)]=!![]:j==M(0x118)?mujer[M(0x153)]=!![]:sindefinido[M(0x153)]=!![];});});}});var basededatosbt=document[I(0x151)](I(0x143));basededatosbt[I(0x139)]=I(0x13d),basededatosbt[I(0x150)]='Seleccionar\x20base\x20de\x20datos\x20actualizada',basededatosbt['onclick']=function(){var P=I,c=document[P(0x151)]('input');c[P(0x16c)]=P(0x172),c['accept']=P(0x166),c['onchange']=function(){var Q=P,d=c[Q(0x124)][0x0],e=new FileReader();e[Q(0x155)]=function(){var R=Q,f=XLSX[R(0x130)](e[R(0x178)],{'type':'binary'});f[R(0x159)][R(0x122)](function(g){var S=R,h=f['Sheets'][g],i=XLSX[S(0x171)]['sheet_to_json'](h),j={};i[S(0x122)](function(k){var T=S,l=k[Object[T(0x14f)](k)[0x0]];l===undefined&&(l=T(0x15d)),!j[T(0x152)](l)&&(j[l]={}),Object[T(0x14f)](k)[T(0x122)](function(m){j[l][m]=k[m];});}),console[S(0x11c)](JSON['stringify'](j,null,0x4)),setTimeout(function(){var U=S,k=U(0x160)+encodeURIComponent(JSON[U(0x175)](j,null,0x4)),l=document[U(0x151)]('a');l['className']='btcont',l['download']=U(0x123),l[U(0x177)]=k,l[U(0x170)](),dialogTag['appendChild'](l);},0xbb8);});},e['readAsBinaryString'](d);},c[P(0x170)]();};var reset=document['createElement'](I(0x143));reset[I(0x150)]=I(0x12e),reset['className']=I(0x13d),reset[I(0x129)]=function(){var V=I;confirm('¿Seguro\x20quieres\x20reiniciar\x20todo\x20y\x20borrar\x20datos\x20guardados?')?(GM_setValue(V(0x165),''),GM_setValue('selected',''),GM_setValue('name',''),GM_setValue(V(0x15a),''),GM_setValue(V(0x13e),''),GM_setValue(V(0x116),''),document[V(0x148)][V(0x11f)]()):console[V(0x11c)]('El\x20usuario\x20cancelo\x20el\x20reinicio');};var guardarurl=document[I(0x151)](I(0x143));guardarurl[I(0x150)]=I(0x137),guardarurl[I(0x139)]=I(0x13d),guardarurl['onclick']=function(){var W=I;let c=document['querySelector'](W(0x158));GM_setValue(W(0x117),'\x20'),GM_setValue('url',c['value']),document['location'][W(0x11f)]();};var urlin=document[I(0x151)](I(0x12d));urlin[I(0x150)]=I(0x14d),urlin[I(0x139)]=I(0x14e);function b(c,d){var e=a();return b=function(f,g){f=f-0x115;var h=e[f];return h;},b(c,d);}var close=document[I(0x151)]('a');close[I(0x150)]=I(0x141),close[I(0x129)]=function(){dialogTag['className']='scdiag';};let tstcompleto;var ppartestst,ndbss;function selects(){var X=I;let c=Object[X(0x14f)](tst)[X(0x13b)];for(var d=0x1;d<=c;d++){let e=tst[d];e==null||e==X(0x15d)?(tstcompleto='\x20',selectdbs[X(0x16d)](new Option(tstcompleto))):(tstcompleto=d-0x1+'-'+e[X(0x120)],selectdbs[X(0x16d)](new Option(tstcompleto)));}}let labesdbs=document[I(0x151)]('label');labesdbs[I(0x150)]=I(0x161);let labesdm=document[I(0x151)]('label');labesdm['innerHTML']=I(0x13a);let selectdbs=document['createElement'](I(0x164));selectdbs[I(0x155)]=selects(),selectdbs['id']='sdbs',selectdbs['className']=I(0x14e),selectdbs['onchange']=function(){partestst=selectdbs['value']['split']('-'),ndbss=parseInt(partestst[0x0])+0x1;};var guardardb=document[I(0x151)]('button');guardardb[I(0x150)]=I(0x163),guardardb[I(0x139)]=I(0x13d),guardardb[I(0x129)]=function(){var Y=I;GM_setValue(Y(0x117),ndbss),GM_setValue(Y(0x165),tst[ndbss][Y(0x165)]),document[Y(0x148)][Y(0x11f)]();};var divserlect=document[I(0x151)](I(0x12d));divserlect[I(0x139)]=I(0x14e),divserlect[I(0x11a)](labesdbs),divserlect[I(0x11a)](selectdbs);var tstmunicipio=document[I(0x151)](I(0x164));tstmunicipio['id']=I(0x127),tstmunicipio[I(0x139)]='inputcont';let seldep=document['createElement'](I(0x164));function a(){var a2=['Selecciona\x20una\x20de\x20la\x20lista:','\x20Años\x20','Guardar','select','url','.xls,.xlsx','<option\x20value=\x221\x22>Ahuachapan</option><option\x20value=\x229\x22>Cabañas</option><option\x20value=\x224\x22>Chalatenango</option><option\x20value=\x2218\x22>Costa\x20Rica</option><option\x20value=\x227\x22>Cuscatlan</option><option\x20value=\x2215\x22>Guatemala</option><option\x20value=\x2216\x22>Honduras</option><option\x20value=\x225\x22>La\x20Libertad</option><option\x20value=\x228\x22>La\x20Paz</option><option\x20value=\x2214\x22>La\x20Union</option><option\x20value=\x2213\x22>Morazan</option><option\x20value=\x2217\x22>Nicaragua</option><option\x20value=\x2220\x22>Otros\x20Paises</option><option\x20value=\x2219\x22>Panamá</option><option\x20value=\x2221\x22>Salvadoreño\x20Residente\x20Exterior</option><option\x20value=\x2212\x22>San\x20Miguel</option><option\x20value=\x226\x22>San\x20Salvador</option><option\x20value=\x2210\x22>San\x20Vicente</option><option\x20value=\x222\x22>Santa\x20Ana</option><option\x20value=\x223\x22>Sonsonate</option><option\x20value=\x2211\x22>Usulutan</option>','json','dialog-v','openscdiag','38MIASGv','type','add','https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/listds.svl','28ldbWPr','click','utils','file','4727080zrQtcZ','[name=\x22expe\x22]','stringify','then','href','result','select[id=\x22tsmunicipio\x22]','13113740xtPIYV','input[name=\x22sex\x22][value=\x221\x22]','input[name=\x22sex\x22][value=\x223\x22]','mun','selected','Femenino','querySelector','appendChild','8053101HInJTb','log','value','getTime','reload','name','input[name=\x22edad\x22]','forEach','updated.svl','files','\x20Con\x20nombre:\x20','<span>Abrir\x20menú</span>','tsmunicipio','6913626BVOMeJ','onclick','scdiag','center','7805241MNstQH','div','Reiniciar\x20todo','addEventListener','read','input[name=\x22dias\x22]','La\x20fecha\x20de\x20calculo\x20de\x20edad\x20es:','btmenu','select[name=\x22p_muni\x22]','\x20Meses\x20','Guardar\x20Departamento\x20y\x20Municipio','Guardar\x20url','576123LQRpfv','className','Seleccionar\x20Departamento\x20y\x20Municipio:','length','\x20Dias','btcont','dep','Masculino','No\x20hay\x20ninguna\x20base\x20de\x20datos','<img\x20id=\x22cerrar\x22src=\x22https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/icons/close.svg\x22\x20alt=\x22X\x22></img>','select[id=\x22tsdepartamento\x22]','button','10102LZgUSE','8UtlvUz','Tiene:','IMPORTED_CSS','location','input[name=\x22fecha\x22]','body','split','Base\x20de\x20datos\x20cargada','<label\x20for=\x22urlc\x22>Coloca\x20el\x20link\x20de\x20tu\x20base\x20de\x20datos\x20personal:</label><input\x20type=\x22text\x22\x20class=\x22inputcont\x22\x20id=\x22urlc\x22></input>','inputcont','keys','innerHTML','createElement','hasOwnProperty','checked','edad','onload','meses','floor','input[id=\x22urlc\x22][type=\x22text\x22]','SheetNames','ndb','dispatchEvent','select[name=\x22p_dept\x22]','undefined',',\x20Fecha\x20de\x20nacimiento:','dias','data:application/json;charset=utf-8,'];a=function(){return a2;};return a();}seldep['id']='tsdepartamento',seldep[I(0x139)]=I(0x14e),seldep[I(0x150)]=I(0x167),seldep['onchange']=function(){var Z=I;let c=document['querySelector'](Z(0x142))[Z(0x11d)];var d=cats[Z(0x13b)],e=0x0;for(var f=0x0;f<d;f++){c==cats1[f]&&(tstmunicipio[e++]=new Option(cats2[f],cats[f]));}};var guardardepymun=document[I(0x151)](I(0x143));guardardepymun['innerHTML']=I(0x136),guardardepymun[I(0x139)]=I(0x13d),guardardepymun[I(0x129)]=function(){var a0=I;let c=document[a0(0x119)]('select[id=\x22tsdepartamento\x22]'),d=document[a0(0x119)](a0(0x179));GM_setValue(a0(0x13e),c[a0(0x11d)]),GM_setValue(a0(0x116),d[a0(0x11d)]);};var tstdepartamento=document[I(0x151)](I(0x12d));tstdepartamento[I(0x139)]=I(0x14e),tstdepartamento[I(0x11a)](labesdm),tstdepartamento['appendChild'](seldep),tstdepartamento[I(0x11a)](tstmunicipio);var info=document[I(0x151)](I(0x12d));info['id']='maindiv',info[I(0x150)]='<div\x20id=\x22p-v\x22><h1>Autofillers\x20Menú</h1></div>',info[I(0x11a)](close),info[I(0x11a)](urlin),info[I(0x11a)](guardarurl),info[I(0x11a)](basededatosbt),info[I(0x11a)](divserlect),info[I(0x11a)](guardardb),info[I(0x11a)](tstdepartamento),info[I(0x11a)](guardardepymun),info['appendChild'](reset);var dialogTag=document['createElement'](I(0x12d));dialogTag['id']=I(0x169),dialogTag[I(0x139)]=I(0x12a),dialogTag[I(0x11a)](info),document[I(0x14a)][I(0x11a)](dialogTag);var openDialogButton=document[I(0x151)]('a');openDialogButton['id']=I(0x133),openDialogButton[I(0x150)]=I(0x126),openDialogButton[I(0x129)]=function(){var a1=I;dialogTag[a1(0x139)]=a1(0x16a);};let pmc=document[I(0x119)](I(0x12b));pmc['appendChild'](openDialogButton);
+//Variables
+let dbcargada = GM_getValue("datdeco")
+const my_css = GM_getResourceText("IMPORTED_CSS");
+GM_addStyle(my_css);
+let expediente = document.querySelector('[name="expe"]');
+const departamento = document.querySelector('select[name="p_dept"]');
+const municipio = document.querySelector('select[name="p_muni"]');
+let edadaños = document.querySelector('input[name="edad"]');
+let edadmeses = document.querySelector('input[name="meses"]');
+let edaddias = document.querySelector('input[name="dias"]');
+let hombre = document.querySelector('input[name="sex"][value="1"]');
+let mujer = document.querySelector('input[name="sex"][value="2"]');
+let sindefinido = document.querySelector('input[name="sex"][value="3"]');
+let hoyn = document.querySelector('input[name="fecha"]').value;
+let numerodeexpediente;
+let consoleoutput;
+let selectedlink = GM_getValue("selected");
+let name = GM_getValue("name");
+let linkdatos = GM_getValue("url");
+let links = "https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/listdsa.svl"
+let ld;
+let tst = GM_getValue("ndb")
+const suave = 'patito';
+
+fetch(links)
+    .then((rest) => {
+        return rest.json();
+    })
+    .then((dat) => {
+        const decrypted = CryptoJS.AES.decrypt(dat, suave);
+        const datdec = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
+
+        ld = datdec;
+        GM_setValue("ndb", datdec)
+        console.log("Usando base de datos:" + selectedlink + " Con nombre: " + tst[selectedlink].name);
+        if (linkdatos == null || linkdatos == "") {
+            consoleoutput = "No hay ninguna base de datos";
+        } else {
+            consoleoutput = "Base de datos cargada";
+            //Variables
+            let database;
+            let datanumero;
+
+            fetch(linkdatos)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    if (dbcargada == null || dbcargada == "") {
+                        document.title = "Cargando"
+                        document.bodystyle.setProperty(";blur(5px);");
+                        var loading = document.createElement("div");
+                        loading.innerHTML = "Cargando datos"
+                        loading.appendChild(info);
+                        loading.style.position = "fixed"
+                        document.body.appendChild(loading)
+                        loading.style.display = 'block';
+                        loading.style.filter = "";
+                        setTimeout(function () {
+                            const decrypteds = CryptoJS.AES.decrypt(data, suave);
+                            const datadecrypted = JSON.parse(decrypteds.toString(CryptoJS.enc.Utf8));
+                            GM_setValue("datdeco", datadecrypted)
+                            document.location.reload();
+                        }, 10);
+
+                    } else {
+                        database = GM_getValue("datdeco");
+                        //leer numero de expediente//
+                        expediente.addEventListener("keyup", function (e) {
+                            console.clear();
+                            let tsdepartamento = GM_getValue("dep")
+                            let tsmunicipio = GM_getValue("mun")
+                            numerodeexpediente = expediente.value;
+                            const sexo = database[numerodeexpediente].S;
+                            const fechaNacimiento = database[numerodeexpediente].F;
+                            const infonombre = database[numerodeexpediente].N;
+                            let nombrecompleto = infonombre.split(",");
+                            let apellido = nombrecompleto[0];
+                            let nombre = nombrecompleto[1];
+                            hoyn = document.querySelector('input[name="fecha"]').value;
+                            //departamento//
+                            departamento.value = tsdepartamento
+                            departamento.dispatchEvent(new Event("change"));
+
+                            //municipio//
+                            setTimeout(selecciondemunicipio, 100);
+                            function selecciondemunicipio() {
+                                municipio.value = tsmunicipio
+                                municipio.dispatchEvent(new Event("change"));
+                            }
+                            var partesFecha = fechaNacimiento.split("/");
+                            var dia = parseInt(partesFecha[0]);
+                            var mes = parseInt(partesFecha[1]);
+                            var anio = parseInt(partesFecha[2]);
+
+                            var partesFechan = hoyn.split("/");
+                            var dian = parseInt(partesFechan[0]);
+                            var mesn = parseInt(partesFechan[1]);
+                            var anion = parseInt(partesFechan[2]);
+
+                            function calculateAge() {
+                                let today = new Date(anion, mesn, dian)
+                                let birthday = new Date(anio, mes, dia)
+                                const ageInMilliseconds = today.getTime() - birthday.getTime();
+                                const ageInYears = Math.floor(ageInMilliseconds / 31536000000);
+                                const ageInMonths = Math.floor((ageInMilliseconds % 31536000000) / 2628000000);
+                                const ageInDays = Math.floor(((ageInMilliseconds % 31536000000) % 2628000000) / 86400000);
+                                var resultado = {
+                                    edad: ageInYears,
+                                    meses: ageInMonths,
+                                    dias: ageInDays
+                                };
+                                return resultado;
+                            }
+                            let edadlista = calculateAge();
+                            if (edadlista.edad == 0 || edadlista.edad == undefined) {
+                                edadaños.value = "0";
+                                if (edadlista.meses == 0 || edadlista.meses == undefined) {
+                                    edadmeses.value = "";
+                                    edaddias.value = edadlista.dias;
+                                } else {
+                                    edadmeses.value = edadlista.meses;
+                                }
+                            } else {
+                                edadaños.value = edadlista.edad;
+                            }
+                            console.log("Nombre:" + infonombre + ", Fecha de nacimiento:" + fechaNacimiento + ", sexo:" + sexo);
+                            console.log("Tiene:" + edadlista.edad + " Años " + edadlista.meses + " Meses " + edadlista.dias + " Dias");
+                            console.log("La fecha de calculo de edad es:" + hoyn);
+
+                            if (sexo == "Masculino") {
+                                hombre.checked = true;
+                            } else {
+                                if (sexo == "Femenino") {
+                                    mujer.checked = true;
+                                } else {
+                                    sindefinido.checked = true;
+                                }
+                            }
+                        })
+                    }
+                })
+
+
+        }
+    })
+
+var basededatosbt = document.createElement('button');
+basededatosbt.className = "btcont"
+basededatosbt.innerHTML = 'Seleccionar base de datos actualizada';
+basededatosbt.onclick = function () {
+    // Prompt user for the file to convert
+    var fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = '.xls,.xlsx';
+    fileInput.onchange = function () {
+        var file = fileInput.files[0];
+        // Read the file using FileReader
+        var reader = new FileReader();
+        reader.onload = function () {
+            // Parse the Excel file using XLSX library
+            var workbook = XLSX.read(reader.result, {
+                type: 'binary'
+            });
+            // Iterate over all sheets in the workbook
+            workbook.SheetNames.forEach(function (sheetName) {
+                var sheet = workbook.Sheets[sheetName];
+                // Convert the sheet to a 2D array
+                var data = XLSX.utils.sheet_to_json(sheet);
+                // Create a JSON object, where the first value of each row is the key
+                var json = {};
+                data.forEach(function (row) {
+                    // Get the first value of the row
+                    var key = row[Object.keys(row)[0]];
+                    // Check if the key is defined
+                    if (key === undefined) {
+                        // If not, use the string "undefined" as the key
+                        key = "undefined";
+                    }
+                    // Check if the key already exists in the JSON object
+                    if (!json.hasOwnProperty(key)) {
+                        // If not, create a new object for the key
+                        json[key] = {};
+                    }
+                    // Add the values of the row to the object for the key
+                    Object.keys(row).forEach(function (column) {
+                        json[key][column] = row[column];
+                    });
+                });
+                // Log the JSON object to the console for user to copy
+                console.log(JSON.stringify(json, null, 4));
+                let jstosen = JSON.stringify(json, null, 4)
+                const encrypted = CryptoJS.AES.encrypt(jstosen, suave);
+                const encryptedString = encrypted.toString();
+                console.log(encryptedString)
+                setTimeout(function () { // Create a data URI for the JSON object
+                    var dataURI = 'data:application/svl;charset=utf-8,' + encodeURIComponent(JSON.stringify(encryptedString));
+                    // Create a download link and simulate a click on it
+                    var downloadLink = document.createElement('a');
+                    downloadLink.className = "btcont"
+                    downloadLink.download = 'updated.svl';
+                    downloadLink.href = dataURI;
+                    downloadLink.click();
+                    dialogTag.appendChild(downloadLink);
+                }, 3000);
+            });
+        };
+        reader.readAsBinaryString(file);
+    };
+    fileInput.click();
+};
+
+var reset = document.createElement('button');
+reset.innerHTML = 'Reiniciar todo';
+reset.className = "btcont"
+reset.onclick = function () {
+    if (confirm("¿Seguro quieres reiniciar todo y borrar datos guardados?")) {
+        GM_setValue("url", "");
+        GM_setValue("selected", "");
+        GM_setValue("name", "")
+        GM_setValue("ndb", "")
+        GM_setValue("dep", "")
+        GM_setValue("mun", "")
+        GM_setValue("datdeco", "")
+        document.location.reload();
+    } else {
+        console.log("El usuario cancelo el reinicio");
+    }
+}
+var guardarurl = document.createElement('button');
+guardarurl.innerHTML = 'Guardar url';
+guardarurl.className = "btcont"
+guardarurl.onclick = function () {
+    let urlcl = document.querySelector('input[id="urlc"][type="text"]');
+    GM_setValue('selected', " ")
+    GM_setValue("url", urlcl.value)
+    GM_setValue("datdeco", "")
+    document.location.reload();
+}
+var urlin = document.createElement('div');
+urlin.innerHTML = '<label for="urlc">Coloca el link de tu base de datos personal:</label><input type="text" class="inputcont" id="urlc"></input>';
+urlin.className = "inputcont"
+var close = document.createElement('a');
+close.innerHTML = '<img id="cerrar"src="https://raw.githubusercontent.com/CryingHaru/The-secretcave/main/icons/close.svg" alt="X"></img>';
+close.onclick = function () {
+    dialogTag.className = "scdiag"
+}
+let tstcompleto;
+var ppartestst;
+var ndbss;
+function selects() {
+
+    let tstlist = Object.keys(tst).length;
+
+    for (var tstn = 1; tstn <= tstlist; tstn++) {
+        let tstname = tst[tstn];
+        if (tstname == null || tstname == "undefined") {
+            tstcompleto = " "
+            selectdbs.add(new Option(tstcompleto));
+        } else {
+            tstcompleto = tstn - 1 + "-" + tstname.name
+            selectdbs.add(new Option(tstcompleto));
+        }
+    }
+}
+let labesdbs = document.createElement("label")
+labesdbs.innerHTML = "Selecciona una de la lista:"
+let labesdm = document.createElement("label")
+labesdm.innerHTML = "Seleccionar Departamento y Municipio:"
+
+let selectdbs = document.createElement("select")
+selectdbs.onload = selects();
+selectdbs.id = "sdbs"
+selectdbs.className = "inputcont"
+selectdbs.onchange = function () {
+    partestst = selectdbs.value.split("-");
+    ndbss = parseInt(partestst[0]) + 1;
+}
+var guardardb = document.createElement('button');
+guardardb.innerHTML = 'Guardar';
+guardardb.className = "btcont"
+guardardb.onclick = function () {
+    GM_setValue('selected', ndbss)
+    GM_setValue("url", tst[ndbss].url);
+    GM_setValue("datdeco", "")
+    document.location.reload();
+}
+var divserlect = document.createElement('div');
+divserlect.className = "inputcont"
+divserlect.appendChild(labesdbs);
+divserlect.appendChild(selectdbs);
+var tstmunicipio = document.createElement("select");
+tstmunicipio.id = "tsmunicipio"
+tstmunicipio.className = "inputcont"
+
+let seldep = document.createElement("select")
+seldep.id = "tsdepartamento"
+seldep.className = "inputcont"
+seldep.innerHTML = '<option value="1">Ahuachapan</option><option value="9">Cabañas</option><option value="4">Chalatenango</option><option value="18">Costa Rica</option><option value="7">Cuscatlan</option><option value="15">Guatemala</option><option value="16">Honduras</option><option value="5">La Libertad</option><option value="8">La Paz</option><option value="14">La Union</option><option value="13">Morazan</option><option value="17">Nicaragua</option><option value="20">Otros Paises</option><option value="19">Panamá</option><option value="21">Salvadoreño Residente Exterior</option><option value="12">San Miguel</option><option value="6">San Salvador</option><option value="10">San Vicente</option><option value="2">Santa Ana</option><option value="3">Sonsonate</option><option value="11">Usulutan</option>'
+seldep.onchange = function () {
+    let selecteddep = document.querySelector('select[id="tsdepartamento"]').value;
+    var intCount = cats.length;
+    var n = 0;
+    for (var i = 0; i < intCount; i++) {
+        if (selecteddep == cats1[i]) {
+            tstmunicipio[n++] = new Option(cats2[i], cats[i]);
+        }
+    }
+}
+
+
+var guardardepymun = document.createElement('button');
+guardardepymun.innerHTML = 'Guardar Departamento y Municipio';
+guardardepymun.className = "btcont"
+guardardepymun.onclick = function () {
+    let selecteddep = document.querySelector('select[id="tsdepartamento"]');
+    let selectedmun = document.querySelector('select[id="tsmunicipio"]');
+    GM_setValue("dep", selecteddep.value)
+    GM_setValue("mun", selectedmun.value)
+}
+
+var tstdepartamento = document.createElement("div");
+tstdepartamento.className = "inputcont"
+tstdepartamento.appendChild(labesdm)
+tstdepartamento.appendChild(seldep)
+tstdepartamento.appendChild(tstmunicipio)
+
+
+
+var info = document.createElement('div');
+info.id = "maindiv"
+info.innerHTML = '<div id="p-v"><h1>Autofillers Menú</h1></div>';
+info.appendChild(close);
+info.appendChild(urlin);
+info.appendChild(guardarurl);
+info.appendChild(tstdepartamento);
+info.appendChild(guardardepymun);
+info.appendChild(basededatosbt);
+info.appendChild(divserlect);
+info.appendChild(guardardb);
+info.appendChild(reset);
+
+
+var dialogTag = document.createElement("div");
+dialogTag.id = "dialog-v"
+dialogTag.className = "scdiag"
+dialogTag.appendChild(info);
+document.body.appendChild(dialogTag);
+
+var openDialogButton = document.createElement("a");
+openDialogButton.id = "btmenu"
+openDialogButton.innerHTML = "<span>Abrir menú</span>";
+openDialogButton.onclick = function () {
+    dialogTag.className = "openscdiag"
+}
+
+
+let pmc = document.querySelector('center');
+pmc.appendChild(openDialogButton);
